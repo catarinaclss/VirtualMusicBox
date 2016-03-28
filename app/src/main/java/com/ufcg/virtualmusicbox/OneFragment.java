@@ -4,14 +4,19 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ImageView;
-
 
 public class OneFragment extends Fragment{
 
+    private CheckBox voting_button;
+    private int last_checked_position;
 
     public OneFragment() {
         // Required empty public constructor
@@ -20,7 +25,6 @@ public class OneFragment extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -41,5 +45,11 @@ public class OneFragment extends Fragment{
         return rootView;
     }
 
+    private void getVotingAction(CheckBox voting_button, int last_checked_position){
+        if(voting_button.isChecked()){
+
+            Log.e("Checked", "clicou em " + last_checked_position );
+        }
+    }
 
 }
